@@ -4,3 +4,4 @@ You should consider upgrading via the 'pip install --upgrade pip' command
 
 Just in case web UI didn't pop up after executing the scripts
 systemctl stop docker && systemctl start docker && systemctl status docker
+Also check SELinux and firewall

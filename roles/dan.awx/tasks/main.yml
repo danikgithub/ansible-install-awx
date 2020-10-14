@@ -79,9 +79,24 @@
     permanent: yes
     state: enabled
     immediate: yes
+    zone: public
   when: "'RedHat' in ansible_os_family"
   with_items:
     - "http"
     - "https"
+  notify: restart firewall
+
+- name: Open port in firewall (Firewalld)
+  firewalld:
+    port: '{{ item }}'
+    permanent: yes
+    state: enabled
+    zone: public
+    immediate: yes
+  when: "'RedHat' in ansible_os_family"
+  with_items:
+    - "6379/tcp"
+    - "5432/tcp"
+    - "8052/tcp"
   notify: restart firewall
 ...

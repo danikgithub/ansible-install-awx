@@ -9,7 +9,8 @@ awx_version: devel
 awx_keep_updated: true
 
 awx_postgres_server: ""
-awx_postgres_data_dir: /var/lib/pgdocker
+awx_postgres_data_dir: /var/lib/awx/pgdocker
+awx_docker_compose_dir: ~/.awx/awxcompose
 awx_pg_username: awx
 awx_pg_password: awxpass
 awx_pg_admin_password: postgrespass
